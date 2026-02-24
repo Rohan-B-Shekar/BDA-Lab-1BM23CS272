@@ -69,6 +69,8 @@ cqlsh:library272> SELECT Counter_value
 
 (1 rows)
 
+
+#EXPORT
 qlsh:library272> COPY Library_Info (Stud_Id, Book_Id, Stud_Name, Book_Name, Date_of_issue)
               ... TO '/home/bmscecse/Desktop/library272_info.csv';
 Using 16 child processes
@@ -83,6 +85,8 @@ Using 16 child processes
 Starting copy of library272.library_counter with columns [stud_id, book_name, counter_value].
 Processed: 1 rows; Rate:      25 rows/s; Avg. rate:      25 rows/s
 1 rows exported to 1 files in 0.058 seconds.
+
+#IMPORT
 cqlsh:library272> COPY Library_Info (Stud_Id, Book_Id, Stud_Name, Book_Name, Date_of_issue)
               ... FROM '/home/bmscecse/Desktop/library272_info.csv';
 Using 16 child processes
