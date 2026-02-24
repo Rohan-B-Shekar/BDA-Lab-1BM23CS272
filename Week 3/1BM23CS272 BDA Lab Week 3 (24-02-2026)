@@ -78,6 +78,8 @@ Using 16 child processes
 Starting copy of library272.library_info with columns [stud_id, book_id, stud_name, book_name, date_of_issue].
 Processed: 3 rows; Rate:      46 rows/s; Avg. rate:      46 rows/s
 3 rows exported to 1 files in 0.087 seconds.
+
+
 cqlsh:library272> COPY Library_Counter (Stud_Id, Book_Name, Counter_value)
               ... TO '/home/bmscecse/Desktop/library272_counter.csv';
 Using 16 child processes
@@ -94,6 +96,8 @@ Using 16 child processes
 Starting copy of library272.library_info with columns [stud_id, book_id, stud_name, book_name, date_of_issue].
 Processed: 3 rows; Rate:       4 rows/s; Avg. rate:       7 rows/s
 3 rows imported from 1 files in 0.450 seconds (0 skipped).
+
+
 cqlsh:library272> COPY Library_Counter (Stud_Id, Book_Name, Counter_value)
               ... FROM '/home/bmscecse/Desktop/library272_counter.csv';
 Using 16 child processes
