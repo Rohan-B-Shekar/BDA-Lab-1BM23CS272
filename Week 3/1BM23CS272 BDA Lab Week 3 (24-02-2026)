@@ -65,7 +65,7 @@ cqlsh:library272> SELECT Counter_value
 
  counter_value
 ---------------
-             1
+             2
 
 (1 rows)
 
