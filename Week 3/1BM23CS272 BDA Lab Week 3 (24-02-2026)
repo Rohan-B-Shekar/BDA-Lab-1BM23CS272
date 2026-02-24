@@ -16,12 +16,14 @@ cqlsh:library272> CREATE TABLE Library_Info (
               ...     Date_of_issue timestamp,
               ...     PRIMARY KEY (Stud_Id, Book_Id)
               ... );
+
 cqlsh:library272> CREATE TABLE Library_Counter (
               ...     Stud_Id int,
               ...     Book_Name text,
               ...     Counter_value counter,
               ...     PRIMARY KEY (Stud_Id, Book_Name)
               ... );
+
 cqlsh:library272> BEGIN BATCH
               ... 
               ... INSERT INTO Library_Info (Stud_Id, Book_Id, Stud_Name, Book_Name, Date_of_issue)
@@ -34,6 +36,7 @@ cqlsh:library272> BEGIN BATCH
               ... VALUES (112, 3, 'Arjun', 'BDA', '2024-02-12');
               ... 
               ... APPLY BATCH;
+
 cqlsh:library272> SELECT * FROM Library_Info;
 
  stud_id | book_id | book_name          | date_of_issue                   | stud_name
@@ -43,9 +46,11 @@ cqlsh:library272> SELECT * FROM Library_Info;
      112 |       3 |                BDA | 2024-02-11 18:30:00.000000+0000 |     Arjun
 
 (3 rows)
+
 cqlsh:library272> UPDATE Library_Counter
               ... SET Counter_value = Counter_value + 1
               ... WHERE Stud_Id = 112 AND Book_Name = 'BDA';
+
 cqlsh:library272> SELECT * FROM Library_Counter;
 
  stud_id | book_name | counter_value
@@ -53,6 +58,7 @@ cqlsh:library272> SELECT * FROM Library_Counter;
      112 |       BDA |             1
 
 (1 rows)
+
 cqlsh:library272> SELECT Counter_value
               ... FROM Library_Counter
               ... WHERE Stud_Id = 112 AND Book_Name = 'BDA';
@@ -62,7 +68,6 @@ cqlsh:library272> SELECT Counter_value
              1
 
 (1 rows)
-
 
 cqlsh:library272> COPY Library_Info (Stud_Id, Book_Id, Stud_Name, Book_Name, Date_of_issue)
               ... TO '/home/bmscecse/Desktop/library272_info.csv';
